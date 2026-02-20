@@ -2,7 +2,7 @@ import { FaDownload } from "react-icons/fa6";
 import { FaRegEye } from "react-icons/fa";
 import { FaTrash } from "react-icons/fa";
 
-export default function Actions() {
+export default function Actions({ isUploader }: { isUploader: boolean }) {
 	return (
 		<td className="px-6 py-4 space-x-4">
 			<div className="flex flex-col mr-auto items-start">
@@ -20,13 +20,15 @@ export default function Actions() {
 					<FaDownload className="inline mr-1" />
 					Download
 				</button>
-				<button
-					className="text-red-500 hover:text-red-700 hover:cursor-pointer"
-					title="Delete"
-				>
-					<FaTrash className="inline mr-1" />
-					Delete
-				</button>
+				{isUploader && (
+					<button
+						className="text-red-500 hover:text-red-700 hover:cursor-pointer"
+						title="Delete"
+					>
+						<FaTrash className="inline mr-1" />
+						Delete
+					</button>
+				)}
 			</div>
 		</td>
 	);
