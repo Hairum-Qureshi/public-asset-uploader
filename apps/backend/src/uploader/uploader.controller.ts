@@ -1,5 +1,6 @@
 import {
   Controller,
+  Get,
   Post,
   UploadedFile,
   UseInterceptors,
@@ -15,5 +16,30 @@ export class UploaderController {
   @UseInterceptors(FileInterceptor('file'))
   uploadFile(@UploadedFile() file: Express.Multer.File) {
     return this.uploaderService.uploadFile(file);
+  }
+
+  @Get('all-files')
+  getAllFiles() {
+    return this.uploaderService.getAllFiles();
+  }
+
+  @Get('all-documents')
+  getAllDocuments() {
+    return this.uploaderService.getAllDocuments();
+  }
+
+  @Get('all-videos')
+  getAllVideos() {
+    return this.uploaderService.getAllVideos();
+  }
+
+  @Get('all-images')
+  getAllImages() {
+    return this.uploaderService.getAllImages();
+  }
+
+  @Get('upload-size')
+  getUploadSize() {
+    return this.uploaderService.getTotalUploadSize();
   }
 }
