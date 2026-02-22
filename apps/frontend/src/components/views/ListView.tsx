@@ -49,7 +49,6 @@ export default function ListView({
 											/>
 										);
 									}
-
 									if (file.resource_type === "video") {
 										return (
 											<Video
