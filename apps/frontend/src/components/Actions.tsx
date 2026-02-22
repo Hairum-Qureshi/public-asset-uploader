@@ -1,13 +1,16 @@
 import { FaDownload } from "react-icons/fa6";
 import { FaRegEye } from "react-icons/fa";
 import { FaTrash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Actions({
 	isUploader,
-	isGridView = false
+	isGridView = false,
+	fileURL
 }: {
 	isUploader: boolean;
 	isGridView?: boolean;
+	fileURL: string;
 }) {
 	return (
 		<>
@@ -19,12 +22,14 @@ export default function Actions({
 					>
 						<FaRegEye className="inline" />
 					</button>
-					<button
-						className="text-slate-200 hover:text-slate-400 text-sm hover:cursor-pointer"
-						title="Download"
-					>
-						<FaDownload className="inline" />
-					</button>
+					<Link to={fileURL} target="_blank" rel="noopener noreferrer" download>
+						<button
+							className="text-slate-200 hover:text-slate-400 text-sm hover:cursor-pointer"
+							title="Download"
+						>
+							<FaDownload className="inline" />
+						</button>
+					</Link>
 					{isUploader && (
 						<button
 							className="text-red-400 hover:text-red-600 text-sm hover:cursor-pointer"
