@@ -20,7 +20,7 @@ export default function Image({
 					/>
 					{isUploader && (
 						<div className="absolute top-2 right-2">
-							<Actions isGridView isUploader={isUploader} />
+							<Actions isGridView isUploader={isUploader} fileURL={sourceURL} />
 						</div>
 					)}
 				</div>
@@ -50,7 +50,7 @@ export default function Image({
 						</p>
 					</td>
 					<td className="px-6 py-4">{size} MB</td>
-					<Actions isUploader />
+					<Actions isUploader fileURL={sourceURL} />
 				</tr>
 			)}
 		</>
