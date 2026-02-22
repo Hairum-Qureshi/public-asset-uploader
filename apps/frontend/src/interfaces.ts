@@ -47,6 +47,7 @@ export interface FileProps {
 	isUploader: boolean;
 	sourceURL: string;
 	name: string;
+	isGridView?: boolean;
 }
 
 export type UploadedFiles = (FileDocument | FileImage | FileVideo)[];
