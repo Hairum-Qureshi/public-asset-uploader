@@ -16,13 +16,15 @@ export default function Home() {
 		useFiles();
 
 	// TODO - have it so that it shows what file type the file is instead of it being hard coded
-	// TODO - display the centered text if no files for that category instead of the table with empty rows
-	// TODO - have the different gallery views (grid, list) actually work instead of just being buttons with no functionality
 	// TODO - handle errors like Cloudinary's 420 error for rate limits and display an appropriate message to the user instead of just console logging it
+	// TODO - allow download file feature
+	// TODO - allow users to view images
+	// TODO - *maybe* allow users to view document content
+
 	return (
 		<div className="min-h-screen max-h-auto w-full">
 			<div className="mt-10 max-w-3/4 m-auto">
-				<h1 className="text-3xl font-semibold">Public Files</h1>
+				<h1 className="text-3xl font-semibold">Public Files Archive</h1>
 				<div className="flex items-center h-14 px-2">
 					<div className="flex items-center space-x-10">
 						<h3
