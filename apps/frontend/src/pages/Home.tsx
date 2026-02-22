@@ -114,7 +114,13 @@ export default function Home() {
 						documents={documents}
 					/>
 				) : (
-					<GridView />
+					<GridView
+						currSelected={currSelected}
+						allUploadedFiles={allUploadedFiles}
+						images={images}
+						videos={videos}
+						documents={documents}
+					/>
 				)}
 			</div>
 		</div>
